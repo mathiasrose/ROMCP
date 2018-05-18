@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Magi</title>
+    <script src="../lib/easeljs-0.8.2.combined.js"></script>
+    <script src="../lib/tweenjs-0.5.1.min.js"></script>
+</head>
+
+<body onload="init()">
+
+<canvas id="canvas" width="1800" height="830" style="border: black solid 1px"></canvas>
+
+</body>
+
+<script>
+    
+    createjs.MotionGuidePlugin.install();
+    
+    var stage;
+    function init() {
+        stage = new createjs.Stage(document.getElementById('canvas'));
+        createjs.Ticker.setFPS(60);
+        createjs.Ticker.addEventListener("tick", function (e) {
+            stage.update();
+        });
+        sample();
+
+    }
+
+    function sample() {
+        
+        var magi = new createjs.Bitmap("animagisk2.jpg");
+        magi.x = 170;
+        magi.y = 50;
+        stage.addChild(magi);
+        
+        var magi2 = new createjs.Bitmap("animagisk3.jpg");
+        magi2.x = 170;
+        magi2.y = 50;
+        magi2.alpha = 0;
+        stage.addChild(magi2);
+        
+          var magi3 = new createjs.Bitmap("animagisk4.jpg");
+        magi3.x = 170;
+        magi3.y = 50;
+        magi3.alpha = 0;
+        stage.addChild(magi3);
+        
+        
+        
+        
+        var toy1 = new createjs.Bitmap("lege1.jpg");
+        toy1.x = 500;
+        toy1.y = 120;
+        toy1.alpha = 0;
+        stage.addChild(toy1);             
+                
+        
+        var toy2 = new createjs.Bitmap("lege2.jpg");
+        toy2.x = 500;
+        toy2.y = 120;
+        toy2.alpha = 0;
+        stage.addChild(toy2); 
+        
+                
+        var toy3 = new createjs.Bitmap("lege3.jpg");
+        
+        toy3.x = 500;
+        toy3.y = 120;
+        toy3.alpha = 0;
+        stage.addChild(toy3);   
+        
+        var toy4 = new createjs.Bitmap("lege4.jpg");
+        toy4.x = 500;
+        toy4.y = 120;
+        toy4.alpha = 0;
+        stage.addChild(toy4);
+        
+        var wand = new createjs.Bitmap("wand.jpg");
+        wand.x = 605;
+        wand.y = 192;
+        wand.rotation = 140;
+        stage.addChild(wand);
+        
+
+        
+        function loop(){
+    
+   //createjs.Tween.get(toy1).to({alpha: 1},200);
+        createjs.Tween.get(toy1).to({guide:{ path:[500,120, 400,50,250,130] }},2000); 
+            createjs.Tween.get(toy1).to({alpha: 1},400).wait(1400).to({alpha: 0},200);
+     
+            
+        createjs.Tween.get(toy2).wait(750).to({guide:{ path:[500,120, 400,50,250,130] }},2000);  
+           createjs.Tween.get(toy2).wait(750).to({alpha: 1},400).wait(1400).to({alpha: 0},200);
+            
+        createjs.Tween.get(toy3).wait(1500).to({guide:{ path:[500,120, 400,50,250,130] }},2000);
+             createjs.Tween.get(toy3).wait(1500).to({alpha: 1},400).wait(1400).to({alpha: 0},200);
+            
+        createjs.Tween.get(toy4).wait(2250).to({guide:{ path:[500,120, 400,50,250,130] }},2000);
+           createjs.Tween.get(toy4).wait(2250).to({alpha: 1},400).wait(1400).to({alpha: 0},200);
+  
+        
+         
+} 
+        setInterval(loop, 5000);
+        loop();
+        
+    
+        
+        
+        function wandloop() {
+            
+        
+        createjs.Tween.get(wand).to({rotation:160}, 200).to({rotation:140}, 200).to({rotation:160}, 200).to({rotation:140}, 200).to({rotation:160}, 200).to({rotation:140}, 200).to({rotation:160}, 200).to({rotation:140}, 200).to({rotation:160}, 200).to({rotation:140}, 200).to({rotation:160}, 200).to({rotation:140}, 200);
+    
+
+        }
+            
+        setInterval(wandloop, 5000);
+        wandloop();
+        
+        
+        
+        function eye() {
+            
+            createjs.Tween.get(magi2).to({alpha: 1}).wait(4000).to({alpha: 0}).wait(4000);
+        }
+        setInterval(eye, 8000);
+        eye();
+        
+         var math = Math.floor(Math.random() * 1000) + 1;
+        
+         function eye2() {
+            
+            createjs.Tween.get(magi3).to({alpha: 1},200).wait(10).to({alpha: 0},200).wait(math);
+        }
+        setInterval(eye2, 6000);
+        eye2();
+        
+        
+
+      
+       
+        //var path = new createjs.Shape();
+//path.graphics.beginStroke("#ff00ff").moveTo(500,120).curveTo(400,50,250,120).curveTo(300,120,200,120);
+//stage.addChild(path);
+         
+                  
+        
+
+        
+        function tick(event) {
+    stage.update();
+}
+    }
+
+    function startGame() {
+
+    }
+</script>
+</html>
+        
+        
+        
+    </script>
+</head>
+
+<body onload="init()">
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+</body>
+
+</html>

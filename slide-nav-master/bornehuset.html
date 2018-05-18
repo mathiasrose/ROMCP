@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Den Magiske Gryde</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+
+    <div class="nav">
+        <nav>
+            <center>
+                <ul id="menu-bar">
+
+                    <li class=""><a href="index.html#section1">Forside</a>
+                        <ul>
+                            <li><a href="index.html#section1">Velkommen</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="active"><a href="bornehuset.html">Børnehuset</a>
+                        <ul>
+                            <li><a href="#hverdagen">Hverdagen</a></li>
+                            <li><a href="index.html#section3">Galleri</a></li>
+                            <li><a href="#traditioner">Traditioner</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="PraktiskInfo.html">Praktisk info</a>
+                        <ul>
+                            <li><a href="PraktiskInfo.html#aabningstider">Åbningstider</a></li>
+
+                            <li><a href="PraktiskInfo.html#priser">Priser</a></li>
+                            <li><a href="PraktiskInfo.html#fokus">Fokusområder</a></li>
+                            <li><a href="PraktiskInfo.html#beliggenhed">Beliggenhed</a></li>
+                            <li><a href="PraktiskInfo.html#partnere">Partnerskaber</a></li>
+                            <li><a href="PraktiskInfo.html#frivillighed">Frivillighed</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="kontakt.html">Kontakt</a>
+                        <ul>
+                            <li><a href="kontakt.html#kontakt">Telefon og mail</a></li>
+
+                            <li><a href="kontakt.html#indmelding">Indmelding</a></li>
+
+                            <li><a href="kontakt.html#ansatte">Ansatte</a></li>
+                            <li><a href="kontakt.html#bestyrelsen">Bestyrelsen</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </center>
+        </nav>
+
+    </div>
+    <div id="traditioner" class="section">
+        <div class="text-wr">
+            <h1 class="title">Traditioner og kost</h1>
+            <p>
+
+                <b>Traditioner og kost</b><br clear="all"> Vi har her i Børnehuset gennem mange år opbygget mange gode traditioner og dem vil vi gerne bevare. Traditioner er gode at have med i rygsækken, når man bliver voksen, det er en del af vores kultur. Glæden og forventningen op til og under festen/arrangementet er en spændende og dejlig tid, som både børn/voksne har meget glæde af.</p>
+            <input id="read-more-toggle-1" class="read-more-toggle" type="checkbox">
+<div class="read-more-content">
+                <p>Børnehuset har en kostpolitik, som indeholder forslag til sund mad, lidt om hvornår vi spiser, fødselsdage og maddage. Vi kommer med forslag til hvad I kan komme i børnenes madpakker og hvad der vil være godt at komme i eftermiddagsmadpakken når børnene begynder at blive trætte. I vores velkomstmappe, som I får udleveret når jeres barn starter, ligger en pjece med kostpolitikken.
+            </p>
+        </div>
+            <label class="read-more-toggle-label" for="read-more-toggle-1">Vis </label>
+</div>
+    </div>
+    
+    
+    <div id="hverdagen" class="section">
+        <div class="text-wr">
+            <h1 class="title">Hverdagen</h1>
+            <p>
+                Børnehuset minder om en villa med stue og 1. sal. Vi har masser af plads til vores 42 børn. Huset er opdelt i 5 dynamiske lærerum.<br><br> På 1. sal har vi Skovtroldene, som er en blanding af vores børnehavebørn. Vi indretter læringsmiljøerne og pædagogikken så de forskellige aldersgrupper bliver tilgodeset.</p>
+    
+            <input id="read-more-toggle-2" class="read-more-toggle" type="checkbox">
+<div class="read-more-content">
+            
+            <p>I stueetagen har vi Krudtuglerne, som er de yngste børnehavebørn og de ældste vuggestuebørn (mellemgruppen). Her har vi også indrettet læringsmiljøet og pædagogikken så det tilgodeser begge aldersgrupper. <br><br> Det sidste rum er indrettet til vuggestuebørnene, som vi har døbt Rumpenisserne.<br><br> Vi åbner hver dag på krudtuglestuen og hvis børnene skal spise morgenmad, medbringer de det selv. Vi serverer mælk til morgenmaden. Morgenmaden kan spises indtil kl. 7.45, hvor vi går i læringsrummene.<br> Morgen og eftermiddag slår vi de 2 børnehave grupper sammen. <br> I løbet af året har vi 2-4 emneuger.<br> Faste aktiviteter: gymnastik, sang, musik og bevægelse turdag, maddag og legetøjsdag
+            </p>
+        </div>
+         <label class="read-more-toggle-label-2" for="read-more-toggle-2">Vis </label>
+</div>   
+    </div>
+
+     <div class="footer">
+                  
+        <p> <br><b>Den Magiske Gryde</b>, Vissenbjergvej 5, 5230 Odense M<br><b>tlf:</b> +45 61 42 72 10&nbsp; &nbsp; &nbsp; <b>mail:</b> jkh@denmagiskegryde.dk</p>
+    </div>
+    
+    
+    <script src="dist/slideNav.js" type="text/javascript"></script>
+    <script>
+        window.slide = new SlideNav({
+            changeHash: true
+        });
+
+        //nyt
+        var slideIndex = 1;
+        var timer = null;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            clearTimeout(timer);
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            clearTimeout(timer);
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n == undefined) {
+                n = ++slideIndex
+            }
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            timer = setTimeout(showSlides, 7000);
+        }
+    </script>
+</body>
+
+</html>
