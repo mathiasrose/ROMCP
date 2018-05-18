@@ -4,50 +4,406 @@
 <head>
     <title>Den Magiske Gryde</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="../slide-nav-master/easeljs-0.8.2.combined.js"></script>
+    <script src="../slide-nav-master//tweenjs-0.5.1.min.js"></script>
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
 </head>
+    <body onload="init()">
+        
+        
+        <div id="section1" class="section">
+            <canvas id="canvas" width="1440" height="830" style="border: black solid 0px"></canvas>
+    <script>
+    
+    createjs.MotionGuidePlugin.install();
+    
+    var stage;
+    function init() {
+        stage = new createjs.Stage(document.getElementById('canvas'));
+        createjs.Ticker.setFPS(60);
+        createjs.Ticker.addEventListener("tick", function (e) {
+            stage.update();
+        });
+        sample();
 
-<body>
-    <div class="nav">
-        <nav>
-            <a href="#section1">Forside</a>
-            <a href="#section2">Børnehuset2</a>
-            <a href="#section3">Praktisk info</a>
-            <a href="#section4">Kontakt</a>
-        </nav>
-    </div>
-    <div id="section1" class="section">
-        <div class="text-wr">
+    }
+
+    function sample() {
+        
+        var magiskContainer = new createjs.Container();
+       
+        magiskContainer.x = canvas.width / 9;
+        magiskContainer.y = 100;
+        stage.addChild(magiskContainer);
+        
+        var magi = new createjs.Bitmap("animagisk2.jpg");
+        magi.x = 170;
+        magi.y = 50;
+        magi.scaleX = 1.3;
+        magi.scaleY = 1.3;
+        magiskContainer.addChild(magi);
+        
+        var magi2 = new createjs.Bitmap("animagisk3.jpg");
+        magi2.x = 170;
+        magi2.y = 50;
+        magi2.alpha = 0;
+        magi2.scaleX = 1.3;
+        magi2.scaleY = 1.3;
+        magiskContainer.addChild(magi2);
+        
+          var magi3 = new createjs.Bitmap("animagisk4.jpg");
+        magi3.x = 170;
+        magi3.y = 50;
+        magi3.alpha = 0;
+        magi3.scaleX = 1.3;
+        magi3.scaleY = 1.3;
+        magiskContainer.addChild(magi3);
+        
+        
+        
+        
+        var toy1 = new createjs.Bitmap("lege1.jpg");
+        toy1.x = 500;
+        toy1.y = 120;
+        toy1.alpha = 0;
+        toy1.scaleX = 1.3;
+        toy1.scaleY = 1.3;
+        magiskContainer.addChild(toy1);             
+                
+        
+        var toy2 = new createjs.Bitmap("lege2.jpg");
+        toy2.x = 500;
+        toy2.y = 120;
+        toy2.alpha = 0;
+        toy2.scaleX = 1.3;
+        toy2.scaleY = 1.3;
+        magiskContainer.addChild(toy2); 
+        
+                
+        var toy3 = new createjs.Bitmap("lege3.jpg");
+        
+        toy3.x = 500;
+        toy3.y = 120;
+        toy3.alpha = 0;
+        toy3.scaleX = 1.3;
+        toy3.scaleY = 1.3;
+        magiskContainer.addChild(toy3);   
+        
+        var toy4 = new createjs.Bitmap("lege4.jpg");
+        toy4.x = 500;
+        toy4.y = 120;
+        toy4.alpha = 0;
+        toy4.scaleX = 1.3;
+        toy4.scaleY = 1.3;
+        magiskContainer.addChild(toy4);
+        
+        var wand = new createjs.Bitmap("wand.jpg");
+        wand.x = 732;
+        wand.y = 233;
+        wand.rotation = 140;
+        wand.scaleX = 1.3;
+        wand.scaleY = 1.3;
+        magiskContainer.addChild(wand);
+        
+
+        
+        function loop(){
+    
+   //createjs.Tween.get(toy1).to({alpha: 1},200);
+        createjs.Tween.get(toy1).to({guide:{ path:[600,120, 400,50,250,130] }},2000); 
+            createjs.Tween.get(toy1).to({alpha: 1},400).wait(1400).to({alpha: 0},200);
+     
+            
+        createjs.Tween.get(toy2).wait(750).to({guide:{ path:[600,120, 400,50,250,130] }},2000);  
+           createjs.Tween.get(toy2).wait(750).to({alpha: 1},400).wait(1400).to({alpha: 0},200);
+            
+        createjs.Tween.get(toy3).wait(1500).to({guide:{ path:[600,120, 400,50,250,130] }},2000);
+             createjs.Tween.get(toy3).wait(1500).to({alpha: 1},400).wait(1400).to({alpha: 0},200);
+            
+        createjs.Tween.get(toy4).wait(2250).to({guide:{ path:[600,120, 400,50,250,130] }},2000);
+           createjs.Tween.get(toy4).wait(2250).to({alpha: 1},400).wait(1400).to({alpha: 0},200);
+  
+        
+         
+} 
+        setInterval(loop, 5000);
+        loop();
+        
+    
+        
+        
+        function wandloop() {
+            
+        
+        createjs.Tween.get(wand).to({rotation:160}, 200).to({rotation:140}, 200).to({rotation:160}, 200).to({rotation:140}, 200).to({rotation:160}, 200).to({rotation:140}, 200).to({rotation:160}, 200).to({rotation:140}, 200).to({rotation:160}, 200).to({rotation:140}, 200).to({rotation:160}, 200).to({rotation:140}, 200);
+    
+
+        }
+            
+        setInterval(wandloop, 5000);
+        wandloop();
+        
+        
+        
+        function eye() {
+            
+            createjs.Tween.get(magi2).to({alpha: 1}).wait(4000).to({alpha: 0}).wait(4000);
+        }
+        setInterval(eye, 8000);
+        eye();
+        
+         var math = Math.floor(Math.random() * 1000) + 1;
+        
+         function eye2() {
+            
+            createjs.Tween.get(magi3).to({alpha: 1},200).wait(10).to({alpha: 0},200).wait(math);
+        }
+        setInterval(eye2, 6000);
+        eye2();
+        
+        
+
+      
+       
+        //var path = new createjs.Shape();
+//path.graphics.beginStroke("#ff00ff").moveTo(500,120).curveTo(400,50,250,120).curveTo(300,120,200,120);
+//stage.addChild(path);
+         
+                  
+        
+
+        
+        function tick(event) {
+    stage.update();
+}
+    }
+
+    function startGame() {
+
+    }
+</script>
         </div>
+
+   <div class="nav">
+        <nav>
+            <center>
+             <ul id="menu-bar">
+                
+             <li class=""><a href="#section1">Forside</a>
+
+             </li>
+                
+             <li><a href="#section2">Børnehuset</a>
+               <ul>
+               <li><a href="bornehuset.html#hverdagen">Hverdagen</a></li>
+               <li><a href="#section2">Galleri</a></li>
+               <li><a href="bornehuset.html#traditioner">Traditioner</a></li>
+             </ul>
+             </li>
+                
+             <li><a href="#PI">Praktisk info</a>
+                <ul>
+                <li><a href="PraktiskInfo.html#aabningstider">Åbningstider</a></li>
+
+                <li><a href="PraktiskInfo.html#priser">Priser</a></li>
+                <li><a href="PraktiskInfo.html#fokus">Fokusområder</a></li>
+                <li><a href="PraktiskInfo.html#beliggenhed">Beliggenhed</a></li>
+                <li><a href="PraktiskInfo.html#partnere">Partnerskaber</a></li>
+                <li><a href="PraktiskInfo.html#frivillighed">Frivillighed</a></li>
+
+              </ul>
+            </li>
+                
+             <li><a href="kontakt.html">Kontakt</a>
+                <ul>
+                <li><a href="kontakt.html#kontakt">Telefon og mail</a></li>
+                  <li><a href="kontakt.html#indmelding">Indmelding</a></li>
+                <li><a href="kontakt.html#ansatte">Ansatte</a></li>
+                <li><a href="kontakt.html#bestyrelsen">Bestyrelsen</a></li>
+                    
+              </ul>
+             </li>
+
+                
+            </ul>
+            </center>
+        </nav>
+       
     </div>
-    <div id="section2" class="section">
+
+    <div id="velkommen" class="section">
         <div class="text-wr">
             <h1 class="title">Velkommen</h1>
-            <p>Den Magiske Gryde er et foreningsbaseret non-profit børnehus med plads til 35 børnehavebørn og 12 vuggestuebørn.<br><br>
-            Grundet børnehusets størrelse, kan vi tilbyde en nærhed og varme, der ikke er muligt i større børnehuse. Vi arbejder for at være lokalt forankret og bruge lokalområdets muligheder for natur, motion og ture i det fri. Vi prioriterer at børnene hver dag får bevæget sig og brugt deres krop på en måde som er udfordrende og sjov for dem. <br><br>
+            
+            
+            <p>Den Magiske Gryde er et foreningsbaseret non-profit børnehus med plads til 35 børnehavebørn og 12 vuggestuebørn.<br><br> Grundet børnehusets størrelse, kan vi tilbyde en nærhed og varme, der ikke er muligt i større børnehuse. Vi arbejder for at være lokalt forankret og bruge lokalområdets muligheder for natur, motion og ture i det fri. Vi prioriterer at børnene hver dag får bevæget sig og brugt deres krop på en måde som er udfordrende og sjov for dem. </p>
+                      <input id="read-more-toggle-1" class="read-more-toggle" type="checkbox">
+            <div class="read-more-content">
+                <p>
             Vores fokus på idræt, motion og bevægelse i hverdagen kommer til udtryk via: <br><br>
-                <i>- at der som en del af hverdagen gennemføres indendørs aktiviteter, der tager udgangspunkt i materiale. Materialet er med til at gøre det sjovt og motiverende for børnene at træne deres kropslige færdigheder, 
+            
+            <i>- at der som en del af hverdagen gennemføres indendørs aktiviteter, der tager udgangspunkt i materiale. Materialet er med til at gøre det sjovt og motiverende for børnene at træne deres kropslige færdigheder, 
                     <br><br>- at legepladsen benyttes hver eneste dag uanset vejrforholdene for at sikre at børnene får mulighed for at udfolde sig fysisk,<br><br>- ugentlig gymnastik for de største børnehavebørn i nærliggende gymnastiksal, <br><br>- ugentlige gåture i den omkringliggende natur med fokus på fysisk aktivitet, natur og årstidernes gang.</i>
                 <br><br>Det betyder, at børn i Den Magiske Gryde får bevæget sig meget hver eneste dag og at der er voksne til stede, der er opmærksomme på, hvor vigtig motorisk stimulans er for både vuggestue- og børnehavebørn i hverdagen. Den Magiske Gryde er startet d. 1. Marts 2015 og ovennævnte tiltag igangsættes løbende, således at de forventes at være fuldt igangsat i foråret 2019.</p>
         </div>
-    </div>
-    <div id="section3" class="section">
+            <label class="read-more-toggle-label" for="read-more-toggle-1">Vis </label>
+    </div></div>
+ <div id="section2" class="section">
         <div class="text-wr">
-            <h1 class="title">Section 3</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-        </div>
-    </div>
-    <div id="section4" class="section">
-        <div class="text-wr">
-            <h1 class="title">Section 4</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+            <h1 class="title">Børnehuset</h1>
+            
+            
+            <div class="aer">
+                
+                <a class="btn "href="bornehuset.html#traditioner">Traditioner</a>
+                  
+            <a class="btn" href="bornehuset.html#hverdagen">Hverdagen</a>
+            
+            
+         </div>
+            
+            <br>
+            <br>
+            
+        <div class="slideshow-container">
+                
+            <div class="mySlides fade">
+                <img src="Billeder/legeplads1.jpg" style="width:100%">
+                <div class="text"></div>
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="Billeder/legeplads2.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="Billeder/legeplads3.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="Billeder/legeplads4.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="Billeder/legeplads5.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="Billeder/legeplads6.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="Billeder/legeplads7.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="Billeder/legeplads8.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="Billeder/legeplads9.jpg" style="width:100%">
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+            </div>
+            
+            <br> 
         </div>
     </div>
 
+    <div id="PI" class="section">
+        <div class="text-wr">
+            <nav>
+                <br><br>
+                <p><i>.. Her kan du finde generel information om børnehuset Den Magiske Gryde.</i></p>
+                <br><br>
+                <a href="PraktiskInfo.html">Læringssyn</a>
+                <a href="PraktiskInfo.html#aabningstider">Åbningstider</a>
+                <a href="PraktiskInfo.html#priser">Priser</a>
+                 <br> <br>
+                <a href="PraktiskInfo.html#rammer">Fysiske rammer</a>
+               
+                <a href="PraktiskInfo.html#lplaner">Læreplaner</a>
+                <a href="PraktiskInfo.html#fokus">Fokusområder</a>
+                 <br> <br>
+                <a href="PraktiskInfo.html#beliggenhed">Beliggenhed</a>
+                <a href="PraktiskInfo.html#partnere">Partnerskaber</a>
+                <a href="PraktiskInfo.html#frivillighed">Frivillighed</a> <br> <br> 
+            </nav>
+        </div>
+    </div>
+
+    <div id="kalender" class="section">
+        <div class="text-wr">
+            <h1 class="title">Kalender</h1>
+            <div class="kalenderbox">
+  <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;height=450&amp;wkst=2&amp;hl=da&amp;bgcolor=%23ffffff&amp;src=denmagiskegrydekalender%40gmail.com&amp;color=%232F6213&amp;src=da.danish%23holiday%40group.v.calendar.google.com&amp;color=%23B1440E&amp;src=e_2_da%23weeknum%40group.v.calendar.google.com&amp;color=%23A32929&amp;ctz=Europe%2FCopenhagen" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+    </div>
+
+     <div class="footer">
+                  
+        <p> <br><b>Den Magiske Gryde</b>, Vissenbjergvej 5, 5230 Odense M<br><b>tlf:</b> +45 61 42 72 10&nbsp; &nbsp; &nbsp; <b>mail:</b> jkh@denmagiskegryde.dk</p>
+    </div>
+    
+    
     <script src="dist/slideNav.js" type="text/javascript"></script>
     <script>
         window.slide = new SlideNav({
             changeHash: true
         });
+        
+          //nyt
+        var slideIndex = 1;
+        var timer = null;
+            showSlides(slideIndex);
+
+        function plusSlides(n) {
+            clearTimeout(timer);
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            clearTimeout(timer);
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n==undefined){n = ++slideIndex}
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+            
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        timer = setTimeout(showSlides, 7000);
+        } 
 
     </script>
 </body>

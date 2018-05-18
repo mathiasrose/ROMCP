@@ -7,16 +7,16 @@ html {
 .section {
     min-height: 800px;
     position: relative;
-    text-align: center;
+    text-align: justify;
     font-family: sans-serif, arial;
     margin: 0;
 }
 
 h1,
+h2,
 p {
     margin: 0;
     font-family: Helvetica;
-    font-weight: bold;
 }
 
 .text-wr {
@@ -30,29 +30,50 @@ p {
     transform: translate(-50%, -50%);
 }
 
-#section1 {
-    background: url(http://www.denmagiskegryde.dk/DenMagiskeGryde.jpg);
-    background-repeat: no-repeat;
-    background-size: 700px 350px;
-    background-position: center;
-    color: #aeb9b9;
-    
+.kalenderbox {
+    border-style: solid;
+    border-color: #e3e9ff;
+    opacity: 1;
+    width: 100%;
+    height: 620px;
+    border-width: 10px;
+    border-radius: 20px;
 }
+
+.mapsbox {
+    border-style: solid;
+    border-color: #e3e9ff;
+    opacity: 1;
+    width: 100%;
+    height: 620px;
+    border-width: 10px;
+    border-radius: 20px;
+}
+
+
+#velkommen {
+     background: #86AC41;
+    color: #D6F0A9;
+}
+
 
 
 #section2 {
-    background: #4bbfc3;
-    color: #81d2d5;
+      background: #34675C;
+    color: #E1EAEA;
+    min-height: 1000px;
 }
 
-#section3 {
-    background: #283044;
-    color: #686e7c;
+#PI {
+    background: #324851;
+    color: #BBC2C5;
+    min-height: 800px;
 }
 
-#section4 {
-    background: #5c53aa;
-	color: #8d86c3;
+#kalender {
+    background: #7DA3A1;
+    color: #DEE8E8;
+    min-height: 800px;
 }
 
 h1 {
@@ -99,13 +120,190 @@ h1 {
     font-weight: 100;
 }
 
+nav a.disabled {
+      position: fixed;
+    /*left: 50%;*/
+    width: 100%;
+    top: 20px;
+    z-index: 9;
+    padding-left: 10px;
+}
+
+
+
 .nav a.active {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: #ECC03B;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
 }
 
 .nav a:hover {
-    background: rgba(255, 255, 255, 0.7);
+    background: #ECC03B;
+    background-image: -webkit-linear-gradient(top, #ECC03B, #ECC03B);
+    background-image: -moz-linear-gradient(top, #ECC03B, #ECC03B);
+    background-image: -ms-linear-gradient(top, #ECC03B, #ECC03B);
+    background-image: -o-linear-gradient(top, #ECC03B, #ECC03B);
+    background-image: linear-gradient(to bottom, #ECC03B, #ECC03B);
+    text-decoration: none;
+}
+
+
+
+#PI a {
+    text-align: center;
+    padding: 20px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    text-decoration: none;
+    font-size: 0.85em;
+    color: black;
+    font-family: sans-serif, arial;
+    font-weight: 100;
+    display: inline-block;
+    width: 180px;
+    margin-right: 25px;
+    
+}
+
+#PI a:hover {
+    background: #ECC03B;
+    background-image: -webkit-linear-gradient(top, #ECC03B, #ECC03B);
+    background-image: -moz-linear-gradient(top, #ECC03B, #ECC03B);
+    background-image: -ms-linear-gradient(top, #ECC03B, #ECC03B);
+    background-image: -o-linear-gradient(top, #ECC03B, #ECC03B);
+    background-image: linear-gradient(to bottom, #ECC03B, #ECC03B);
+    font-family: Arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.goBk {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    float: right;
+    font-size: 12px;
+}
+
+.goBk:hover {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    float: right;
+    font-size: 12px;
+}
+
+#aabningstider {
+       background: #7DA3A1;
+    color: #DEE8E8;
+
+    min-height: 400px;
+}
+
+#priser {
+       background: #7DA3A1;
+    color: #DEE8E8;
+    min-height: 300px;
+}
+
+#normering {
+     background: #7DA3A1;
+    color: #DEE8E8;
+    min-height: 250px;
+  
+    
+}
+
+#rammer {
+    background-color: antiquewhite;
+    min-height: 600px;
+}
+
+#beliggenhed {
+  background: #86AC41;
+    color: #E7F7CD;
+    min-height: 1200px;
+}
+
+#hverdagen {
+    min-height: 800px;
+}
+
+#traditioner {
+        background: #34675C;
+    color: #E1EAEA;
+    min-height: 800px;
+
+}
+
+#syn {
+               background: #34675C;
+    color: #E1EAEA;
+    min-height: 1500px;
+    font-size-adjust: auto;
+  
+}
+
+.sam_ {
+    border-radius: 50%;
+    box-shadow: 8px 8px rgba(0, 0, 0, 0.1);
+    width: 15%;
+    height: 15%;
+    padding: 0px;
+    border-style: solid;
+    border-color: #ECC03B;
+    opacity: 1;
+   margin: 0px 0px 20px 20px;
+}
+
+
+#fokus {
+        background: #324851;
+    color: #BBC2C5;
+    text-align: justify;
+}
+#frivillighed {
+         background: #7DA3A1;
+    color: #DEE8E8; 
+}
+
+#partnere {
+    background-color: #324851;
+    color: #BBC2C5;
+    min-height: 1000px;
+    
+}
+
+#lplaner {
+     background: #86AC41;
+    color: #E7F7CD;
+    min-height: 605px;
+    
+}
+
+#lplaner a:link {
+    color: white;
+    line-height: 1.5em;
+}
+
+span.txt {
+    padding-left: 10em;
 }
 
 .fork-wr img {
@@ -114,4 +312,590 @@ h1 {
     top: 0;
     right: 0;
     border: 0;
+}
+
+
+.footer {
+      background: #324851;
+    color: #BBC2C5;
+    text-align: center;
+    font-size: 14px;
+    padding: 15px;
+    min-height: 100px;
+}
+
+#kontakt {
+ background: #86AC41;
+    color: #E7F7CD;
+}
+
+#ansatte {
+    background: #34675C;
+    color: #E1EAEA;
+}
+
+#indmelding {
+        background: #324851;
+    color: #BBC2C5;
+    min-height: 1200px;
+    
+}
+
+#bestyrelsen {
+    min-height: 800px;
+    background: #7DA3A1;
+  color: #E1EAEA; 
+}
+
+a:link {
+    color: white;
+}
+
+
+
+/* submenuer */
+
+#menu-bar li {
+  margin: 0px 0px 6px 0px;
+  padding: 0px 6px 0px 6px;
+  float: left;
+  position: relative;
+  list-style: none;
+}
+
+#menu-bar a {
+  color: black;
+  display: block;
+  padding: 6px 20px 6px 20px;
+  margin: 0;
+  margin-bottom: 6px;
+  border-radius: 10px;
+
+}
+
+
+#menu-bar li ul li a {
+  margin: 0;
+}
+
+#menu-bar .active a, #menu-bar li:hover > a {
+  background: #ECC03B;
+  background: #ECC03B
+  color: black;
+    opacity: 0.8;
+}
+
+#menu-bar ul li:hover a, #menu-bar li:hover li a {
+  background: none;
+  border: none;
+  color: #666;
+  -box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+#menu-bar ul a:hover {
+  background: #ECC03B !important;
+  background: linear-gradient(top,  #04ACEC,  #0186BA) !important;
+  color: black !important;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  text-shadow: 0px 0px 0px black;
+    opacity: 1;
+}
+
+#menu-bar li:hover > ul {
+  display: block;
+opacity: 0.8;
+margin-left: 5px;
+    margin-top: 6px;
+}
+
+#menu-bar ul {
+  background: #DDDDDD;
+  background: linear-gradient(top,  #FFFFFF,  #CFCFCF);
+  background: -ms-linear-gradient(top,  #FFFFFF,  #CFCFCF);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#CFCFCF));
+  background: -moz-linear-gradient(top,  #FFFFFF,  #CFCFCF);
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  border: solid 1px #B4B4B4;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 3px #222222;
+  -moz-box-shadow: 2px 2px 3px #222222;
+  box-shadow: 2px 2px 3px #222222;
+}
+
+#menu-bar ul li {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu-bar ul a {
+  padding:10px 15px 10px 15px;
+  font-size:14px;
+  font-style:normal;
+  font-family: sans-serif, arial;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+#menu-bar ul li:first-child > a {
+  border-top-left-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  border-top-right-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topright: 10px;
+}
+
+#menu-bar ul li:last-child > a {
+  border-bottom-left-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+}
+
+#menu-bar:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+#menu-bar {
+  display: inline-block;
+}
+
+  html[xmlns] #menu-bar {
+  display: block;
+}
+
+* html #menu-bar {
+  height: 1%;
+}
+
+
+/* for at sætte hverdagen og traditioner boxe i midten af skærmen */
+
+.aer{
+    text-align: center;
+}
+
+
+/*nye ting herfra og efter */
+{box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none; vertical-align: middle; border-radius: 15px;
+    box-shadow: 10px 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+img {vertical-align: middle;}
+img {border-radius: 15px;
+    box-shadow: 10px 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+        
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  max-height: 700px;
+  position: relative;
+  margin: auto;
+}
+        
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+
+        
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+        
+        
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+        
+        
+        
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+        
+        
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+        
+        
+        
+.active, .dot:hover {
+  
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+        
+        
+/*btn til de to a spans under praktisk info */
+
+.btn {
+    text-align: center;
+    padding: 20px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    text-decoration: none;
+    font-size: 1em;
+    color: black;
+    font-family: sans-serif, arial;
+    font-weight: 100;
+    display: inline-block;
+    width: 130px;
+}
+
+.btn:hover {
+    background: #ECC03B;
+    background-image: -webkit-linear-gradient(top, #ECC03B, #ECC03B);
+    background-image: -moz-linear-gradient(top, #ECC03B, #ECC03B);
+    background-image: -ms-linear-gradient(top, #ECC03B, #ECC03B);
+    background-image: -o-linear-gradient(top, #ECC03B, #ECC03B);
+    background-image: linear-gradient(to bottom, #ECC03B, #ECC03B);
+    font-family: Arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* read more show less */
+
+.read-more-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease;
+}
+
+.read-more-toggle {
+  display: none;
+}
+
+.read-more-toggle-label {
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  margin-top: 1em;
+  font-size: .8em;
+  background: #555;
+  color: white;
+}
+
+.read-more-toggle-label:after {
+  content: "mere";
+  display: inline-block;
+}
+
+.read-more-toggle:checked + .read-more-content {
+  display: block;
+  /* css animation won't work with "auto"; set to some height larger
+	than the content */
+  max-height: 1000px;
+}
+
+.read-more-toggle:checked + .read-more-content + .read-more-toggle-label:after {
+  content: "mindre";
+}
+
+
+/* read more 2 */
+
+.read-more-content-2 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease;
+}
+
+.read-more-toggle-2 {
+  display: none;
+}
+
+.read-more-toggle-label-2 {
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  margin-top: 1em;
+  font-size: .8em;
+  background: #555;
+  color: white;
+}
+
+.read-more-toggle-label-2:after {
+  content: "mere";
+  display: inline-block;
+}
+
+.read-more-toggle-2:checked + .read-more-content-2 {
+  display: block;
+  /* css animation won't work with "auto"; set to some height larger
+	than the content */
+  max-height: 1000px;
+}
+
+.read-more-toggle-2:checked + .read-more-content-2 + .read-more-toggle-label-2:after {
+  content: "mindre";
+}
+
+
+/* read more show less 3 */
+
+.read-more-content-3 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease;
+}
+
+.read-more-toggle-3 {
+  display: none;
+}
+
+.read-more-toggle-label-3 {
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  margin-top: 1em;
+  font-size: .8em;
+  background: #555;
+  color: white;
+}
+
+.read-more-toggle-label-3:after {
+  content: "mere";
+  display: inline-block;
+}
+
+.read-more-toggle-3:checked + .read-more-content-3 {
+  display: block;
+  /* css animation won't work with "auto"; set to some height larger
+	than the content */
+  max-height: 1000px;
+}
+
+.read-more-toggle-3:checked + .read-more-content-3 + .read-more-toggle-label-3:after {
+  content: "mindre";
+}
+
+
+
+/* read more show less 4 */
+
+.read-more-content-4 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease;
+}
+
+.read-more-toggle-4 {
+  display: none;
+}
+
+.read-more-toggle-label-4 {
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  margin-top: 1em;
+  font-size: .8em;
+  background: #555;
+  color: white;
+}
+
+.read-more-toggle-label-4:after {
+  content: "mere";
+  display: inline-block;
+}
+
+.read-more-toggle-4:checked + .read-more-content-4 {
+  display: block;
+  /* css animation won't work with "auto"; set to some height larger
+	than the content */
+  max-height: 1000px;
+}
+
+.read-more-toggle-4:checked + .read-more-content-4 + .read-more-toggle-label-4:after {
+  content: "mindre";
+}
+
+
+/* read more show less 5 */
+
+.read-more-content-5 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease;
+}
+
+.read-more-toggle-5 {
+  display: none;
+}
+
+.read-more-toggle-label-5 {
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  margin-top: 1em;
+  font-size: .8em;
+  background: #555;
+  color: white;
+}
+
+.read-more-toggle-label-5:after {
+  content: "mere";
+  display: inline-block;
+}
+
+.read-more-toggle-5:checked + .read-more-content-5 {
+  display: block;
+  /* css animation won't work with "auto"; set to some height larger
+	than the content */
+  max-height: 1000px;
+}
+
+.read-more-toggle-5:checked + .read-more-content-5 + .read-more-toggle-label-5:after {
+  content: "mindre";
+}
+
+
+/* read more show less 6 */
+
+.read-more-content-6 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease;
+}
+
+.read-more-toggle-6 {
+  display: none;
+}
+
+.read-more-toggle-label-6 {
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  margin-top: 1em;
+  font-size: .8em;
+  background: #555;
+  color: white;
+}
+
+.read-more-toggle-label-6:after {
+  content: "mere";
+  display: inline-block;
+}
+
+.read-more-toggle-6:checked + .read-more-content-6 {
+  display: block;
+  /* css animation won't work with "auto"; set to some height larger
+	than the content */
+  max-height: 1000px;
+}
+
+.read-more-toggle-6:checked + .read-more-content-6 + .read-more-toggle-label-6:after {
+  content: "mindre";
+}
+
+
+/* table pdf */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.trtekst {
+    font-size: 25px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 15px;
+    padding-right: 100px;
 }
